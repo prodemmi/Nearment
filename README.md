@@ -11,7 +11,6 @@ Nearment (Near + Comment) is **a** full-stack demo using **React**, **Express**,
 <p align="center">
   <img src="assets/diagram.png" />
 </p>
----
 
 ## 🧩 Stack Overview
 | Layer         | Tech                            | Description                                 |
