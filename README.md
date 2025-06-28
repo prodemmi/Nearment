@@ -1,5 +1,5 @@
 # 🧠 Semantic Comment Search Demo 
-Nearment (Near + Comment) is **a** full-stack demo using **React**, **Express**, **Qdrant**, and **Cassandra** for semantic search over user comments. Designed for product comment analysis and searching.
+Nearment (Near + Comment) is a full-stack demo using **React**, **Express**, **Qdrant**, and **Cassandra** for semantic search over user comments. Designed for product comment analysis and searching.
 
 ## ✨ Features
 - 💬 Submit comments with auto-detected **sentiment purpose**
