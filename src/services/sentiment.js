@@ -1,16 +1,7 @@
 const fetch = require("node-fetch");
-const sentiment = require('multilang-sentiment');
 
-const LANG = process.env["SYSTEM_LANG"];
 const GEMINI_BASE_URL = process.env["GEMINI_BASE_URL"] ?? "https://generativelanguage.googleapis.com";
 const GEMINI_API_KEY = process.env["GEMINI_API_KEY"];
-
-async function generateSentimentLabels(input) {
-  const result = sentiment(input, LANG);
-  return {
-    sentiment_score: result.score,
-  }
-}
 
 async function generateSentimentLabelsWithAI(text) {
   // Define the prompt with clear instructions and expected JSON output format
@@ -99,6 +90,5 @@ async function generateSentimentLabelsWithAI(text) {
 }
 
 module.exports = {
-  generateSentimentLabels,
   generateSentimentLabelsWithAI,
 };

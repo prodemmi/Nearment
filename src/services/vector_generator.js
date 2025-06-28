@@ -1,8 +1,4 @@
-const tf = require('@tensorflow/tfjs');
-const use = require('@tensorflow-models/universal-sentence-encoder');
-const { pipeline, env, FeatureExtractionPipeline, Tensor } = require('@huggingface/transformers');
-
-const resolvePath = (filename) => "http://localhost:8000/models/universal-sentence-encoder/" + filename;
+const { pipeline, env, FeatureExtractionPipeline } = require('@huggingface/transformers');
 
 env.backends.onnx = "wasm-node";
 let embedModel = null;
@@ -17,18 +13,6 @@ async function loadModel() {
   return embedModel;
 }
 
-async function generateVector(input) {
-  const model = await use.load({
-    modelUrl: resolvePath("model.json"),
-    vocabUrl: resolvePath("vocab.json"),
-  });
-
-  const embeddings = await model.embed(input);
-  const vectors = await embeddings.array();
-
-  return vectors[0];
-}
-
 /**
  * @returns {Promise<number[]>}
  */
@@ -39,6 +23,5 @@ async function generateVectorV2(text) {
 }
 
 module.exports = {
-  generateVector,
   generateVectorV2,
 };

@@ -6,10 +6,10 @@ const text = "کیفیت افتضاح بود، نخرید!";
 
 async function test() {
     const vector = await generateVectorV2(text);
-    console.log(vector.length, vector);
+    console.log(vector.length);
 
-    // const sentiment_params = await generateSentimentLabelsWithAI(text);
-    // console.log(sentiment_params)
+    const sentiment_params = await generateSentimentLabelsWithAI(text);
+    console.log(sentiment_params)
 }
 
 test();
